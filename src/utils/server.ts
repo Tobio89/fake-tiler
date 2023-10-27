@@ -134,7 +134,9 @@ export async function createServer(): Promise<Express> {
 
     res.status(200);
     res.send({
-      cyto
+      cyto,
+      // membrane: membr,
+      // nucleus: nuc
     });
   })
   return server
