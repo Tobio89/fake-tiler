@@ -10,6 +10,10 @@ var corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
+import cyto from './public/23AP-0048-0008a/23AP-0048-0008a_cytoplasm.json';
+import membr from './public/23AP-0048-0008a/23AP-0048-0008a_membrane.json';
+import nuc from './public/23AP-0048-0008a/23AP-0048-0008a_nucleus.json';
+
 function makeFakePoints({x, y, w, h}:{x:number, y:number, w:number, h:number}){
 
   const points = [];
@@ -122,6 +126,15 @@ export async function createServer(): Promise<Express> {
     res.status(200);
     res.send({
       points: makeFakePoints(req.body.trueCoords)
+    });
+  })
+
+
+  server.post('/uihc-id/uihc-data-grid/:gridX/:gridY', (req, res) => {
+
+    res.status(200);
+    res.send({
+      cyto
     });
   })
   return server
