@@ -1,4 +1,4 @@
-import {createServer} from './utils/server'
+import {createServer} from './server'
 
 createServer()
   .then(server => {

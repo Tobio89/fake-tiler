@@ -1,4 +1,1 @@
-<Image xmlns="http://schemas.microsoft.com/deepzoom/2008" TileSize="254" Overlap="1" Format="png">
-<script/>
-<Size Width="130668" Height="88122"/>
-</Image>
+<Image TileSize="254" Overlap="1" Format="png" xmlns="http://schemas.microsoft.com/deepzoom/2008"><Size Width="130668" Height="88122" /></Image>
