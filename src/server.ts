@@ -48,6 +48,19 @@ export async function createServer(): Promise<Express> {
     })  
 
   })
+  server.get('/img-query/:testNumber/**', (req, res) => {
+    const options = makeOptions();
+
+    const req_layer = req.query.layer;
+    console.log('req_layer', req_layer)
+
+    const req_fle = req_layer ? `${req_layer}-a` : req.params.testNumber.replace('_files', '');
+
+      res.sendFile(`test-${req_fle}.png`, options, function (err) {
+        console.log('Sent', req.path)
+    })  
+
+  })
   server.get('/img-hidden/:testNumber/**', (req, res) => {
     const requestHiddenImage = req.query.hidden === 'true' ?? false;
 
